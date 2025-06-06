@@ -11,14 +11,16 @@ To write a python program to perform stop and wait protocol
 ## PROGRAM:
 
 ## Client:
+```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 while True: 
  print(s.recv(1024).decode())
  s.send("acknowledgement recived from the server".encode())
-
+ ```
 ## Server:
+```
 import socket
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -37,6 +39,7 @@ while True:
  if ack:
  print(ack)
  i+=s
+```
 
 ## OUTPUT:
 ![330068105-569c3c4a-1361-49b8-9c1d-4646aaed6139](https://github.com/user-attachments/assets/3232880b-0fef-4987-9b72-c4cd2a5dd8d7)
